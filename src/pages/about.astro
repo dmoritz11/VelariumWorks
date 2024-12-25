@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<Layout title="About Us">
+  <PageHeader 
+    title="About Us" 
+    description="Woman and veteran-owned business bringing unique perspectives to media production."
+    image="/images/about-header.webp"
+  />
+
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+      <div>
+        <h2 class="text-3xl font-heading font-bold mb-6">Our Story</h2>
+        <p class="text-lg mb-6">VelariumWorks LLC was founded with a vision to provide exceptional media production, event management, and content solutions. Our name, inspired by the Roman velarium - a protective covering that enhanced the experience of spectators - reflects our commitment to excellence and innovation in everything we do.</p>
+        <p class="text-lg">As a woman and veteran-owned business, we bring unique perspectives and disciplined execution to every project, ensuring our clients receive outstanding results that exceed expectations.</p>
+      </div>
+      <div class="relative">
+        <img 
+          src="/images/about-story.webp" 
+          alt="VelariumWorks team in action"
+          class="rounded-lg shadow-lg"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="bg-light rounded-lg p-8 mb-20">
+      <h2 class="text-3xl font-heading font-bold mb-8 text-center">Leadership</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="text-center">
+          <img 
+            src="/images/leader-brigette.webp" 
+            alt="Brigette Moritz"
+            class="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
+            loading="lazy"
+          />
+          <h3 class="text-xl font-heading font-bold">Brigette Moritz</h3>
+          <p class="text-lg text-gray-600">Owner & CEO</p>
+        </div>
+        <div class="text-center">
+          <img 
+            src="/images/leader-damon.webp" 
+            alt="Damon Moritz"
+            class="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
+            loading="lazy"
+          />
+          <h3 class="text-xl font-heading font-bold">Damon Moritz</h3>
+          <p class="text-lg text-gray-600">President</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

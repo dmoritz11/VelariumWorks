@@ -1,0 +1,59 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource/montserrat';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "VelariumWorks - Innovate. Create. Deliver." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | VelariumWorks</title>
+  </head>
+  <body class="bg-white text-dark">
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-primary text-white mt-20">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-heading font-bold text-xl mb-4">VelariumWorks LLC</h3>
+            <p>Manassas, VA</p>
+            <p>Phone: <a href="tel:703-973-3936" class="hover:text-accent">703-973-3936</a></p>
+            <p>Email: <a href="mailto:dmoritz@velariumworks.com" class="hover:text-accent">dmoritz@velariumworks.com</a></p>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="/services" class="hover:text-accent">Services</a></li>
+              <li><a href="/portfolio" class="hover:text-accent">Portfolio</a></li>
+              <li><a href="/contact" class="hover:text-accent">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-xl mb-4">About Us</h3>
+            <p class="mb-4">Woman and Veteran-owned business specializing in media production, event management, and content management.</p>
+          </div>
+        </div>
+        <div class="border-t border-white/20 mt-8 pt-8 text-center">
+          <p>&copy; {new Date().getFullYear()} VelariumWorks LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

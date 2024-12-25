@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { services } from '../data/services';
+---
+
+<Layout title="Our Services">
+  <PageHeader 
+    title="Our Services" 
+    description="Professional media production, event management, and content solutions."
+    image="/images/services-header.webp"
+  />
+
+  <div class="container mx-auto px-4">
+    {services.map(service => (
+      <div id={service.id} class="mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-heading font-bold mb-6">{service.title}</h2>
+            <p class="text-lg mb-6">{service.details}</p>
+          </div>
+          <div class="relative">
+            <img 
+              src={service.image} 
+              alt={service.title}
+              class="rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</Layout>

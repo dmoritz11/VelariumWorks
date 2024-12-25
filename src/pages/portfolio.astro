@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PortfolioItem from '../components/PortfolioItem.astro';
+import HoneycombPattern from '../components/HoneycombPattern.astro';
+
+const portfolioItems = [
+  {
+    title: "Annual Tech Conference",
+    category: "Event Management",
+    description: "Hybrid conference production with live streaming and in-person components.",
+    image: "/images/portfolio/tech-conference.webp"
+  },
+  {
+    title: "Corporate Brand Video",
+    category: "Media Production",
+    description: "Full-service video production showcasing company culture and values.",
+    image: "/images/portfolio/brand-video.webp"
+  },
+  {
+    title: "Digital Asset System",
+    category: "Content Management",
+    description: "Implementation of enterprise-wide digital asset management solution.",
+    image: "/images/portfolio/dam-system.webp"
+  },
+  {
+    title: "Product Launch Event",
+    category: "Event Management",
+    description: "Multi-camera live production for major product release.",
+    image: "/images/portfolio/product-launch.webp"
+  },
+  {
+    title: "Training Series",
+    category: "Media Production",
+    description: "Professional video series for employee training and development.",
+    image: "/images/portfolio/training-series.webp"
+  },
+  {
+    title: "Content Distribution",
+    category: "Content Management",
+    description: "Streamlined content delivery system for multi-platform distribution.",
+    image: "/images/portfolio/content-distribution.webp"
+  }
+];
+---
+
+<Layout title="Portfolio">
+  <PageHeader 
+    title="Our Portfolio" 
+    description="Explore our recent projects and success stories."
+    image="/images/portfolio-header.webp"
+  />
+
+  <div class="relative">
+    <HoneycombPattern className="text-primary" />
+    <div class="container mx-auto px-4 py-12 relative">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {portfolioItems.map(item => (
+          <PortfolioItem {...item} />
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
